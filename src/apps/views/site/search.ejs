@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    <%- include("layout/head", {title: "Search"}) %>
+    </head>
+    <body>
+    <!--	Header	-->
+    <%- include("layout/header") %>
+    <!--	End Header	-->
+    
+    <!--	Body	-->
+    <div id="body">
+        <div class="container">
+            <div class="row">
+                <%- include("layout/menu") %>
+            </div>
+            <div class="row">
+                <div id="main" class="col-lg-8 col-md-12 col-sm-12">
+                    <!--	Slider	-->
+                    
+                        <%- include("layout/slider") %>
+                    
+                    <!--	End Slider	-->
+                    
+                    <!--	List Product	-->
+                    <div class="products">
+                        <div id="search-result">Kết quả tìm kiếm với sản phẩm <span><%=q%></span>
+                        </div>
+                        <div class="product-list card-deck">
+                            
+                                <% for (let product of products) { %>
+                                <%- include("components/product-item", {product}) %>
+                                <% } %>
+                            
+                        </div>
+                    </div>
+                    <!--	End List Product	-->
+                    
+                    <div id="pagination">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#">Trang trước</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Trang sau</a></li>
+                        </ul> 
+                    </div>
+                    
+                </div>
+                
+                <div id="sidebar" class="col-lg-4 col-md-12 col-sm-12">
+                    <%- include("layout/sidebar") %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--	End Body	-->
+    
+    <%- include("layout/footer") %>
+    <!--	End Footer	-->
+    </body>
+    </html>
